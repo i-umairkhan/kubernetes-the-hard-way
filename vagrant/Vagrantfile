@@ -3,11 +3,11 @@
 
 # Define how much memory your computer has in GB (e.g. 8, 16)
 # Larger nodes will be created if you have more.
-RAM_SIZE = 16
+RAM_SIZE = 8
 
 # Define how mnay CPU cores you have.
 # More powerful workers will be created if you have more
-CPU_CORES = 8
+CPU_CORES = 4
 
 # Internal network prefix for the VM network
 # See the documentation before changing this
@@ -34,7 +34,8 @@ RESOURCES = {
   },
   "worker" => {
     "ram" => [ram_selector * 128, 4096].min(),
-    "cpu" => (((CPU_CORES / 4) * 4) - 4) / 4,
+    "cpu" =>  1, 
+    # "cpu" => (((CPU_CORES / 4) * 4) - 4) / 4,
   },
 }
 
